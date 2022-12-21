@@ -1,0 +1,15 @@
+﻿Console.Clear();
+Console.WriteLine("Введите координаты вершин треугольника \n Введите x1,y1,x2,y2,x3,y3 через пробел, завершение Enter: ");
+int[] array = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+int x1 = array[0];
+int y1 = array[1];
+int x2 = array[2];
+int y2 = array[3];
+int x3 = array[4];
+int y3 = array[5];
+double a = Math.Round(Math.Sqrt(Math.Pow((x1-x2),2) + Math.Pow((y1-y2),2)), 2);
+double b = Math.Round(Math.Sqrt(Math.Pow((x2-x3),2) + Math.Pow((y2-y3),2)), 2);
+double c = Math.Round(Math.Sqrt(Math.Pow((x3-x1),2) + Math.Pow((y3-y1),2)), 2);
+double p = (a + b + c) / 2;
+double s = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 2);
+Console.WriteLine($"Площадь треугольника: {s}");
